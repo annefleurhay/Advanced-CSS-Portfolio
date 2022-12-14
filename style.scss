@@ -1,0 +1,73 @@
+$primarypadding: 10px;
+$auto: auto;
+$radius: 30px;
+
+body {
+    background-color: #c3cfe2;
+    margin: 35px;
+    padding: $primarypadding;
+  
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $primarypadding;
+
+    img, button {
+        grid-row: 1 / 2;
+    }
+    img {
+        border-radius: $radius;
+        height: $auto;
+        width: 100%;
+        grid-column: 1 / -1 ;  
+    }
+    button {
+        align-self: center;
+        grid-column: 1 / -1;
+        margin-left: $auto;
+        margin-right: $auto;
+        opacity: 0%;
+        padding: 5px;
+        
+    }
+
+    .fade {
+        display: grid;
+        &:hover {
+            background-color: rgb(39, 38, 39);
+            border-radius: $radius;
+            button {
+                transition-property: opacity;
+                transition-duration: 1s;
+                opacity: 100%;
+            }
+            img {
+                transition-property: opacity;
+                transition-duration: 1s;
+                opacity: 0%;
+            }
+    
+
+        }
+    }
+    
+}
+
+ /*  Media Queries */
+@media (min-width: 480px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $primarypadding;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,25 @@
+@mixin animation {
+
+    display: grid;
+        &:hover {
+            background-color: rgb(39, 38, 39);
+            border-radius: $radius;
+            button {
+                transition-property: opacity;
+                transition-duration: 1s;
+                opacity: 100%;
+            }
+            img {
+                transition-property: opacity;
+                transition-duration: 1s;
+                opacity: 0%;
+            }
+            
+
+        }
+
+
+
+}
+
+    
